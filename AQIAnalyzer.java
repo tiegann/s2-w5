@@ -29,15 +29,29 @@ public class AQIAnalyzer {
 
         // TODO 1: Calculate the average AQI
         int sum = 0;
-        // Your code here
+        for (int i = 0; i<aqiData.length; i++){
+            sum = sum + aqiData[i];
+        }
+        System.out.println(sum);
+
 
         // TODO 2: Find the maximum AQI
         int max = aqiData[0];
-        // Your code here
+        for(int i = 0; i<aqiData.length; i++){
+            if(aqiData[i] < aqiData[i+1]){
+                max = aqiData[i+1];
+            }
+        }
+        System.out.println(max);
 
         // TODO 3: Count "Severe" or "Hazardous" days (AQI > 400)
         int criticalDays = 0;
-        // Your code here
+        for (int a : aqiData){
+            if(a > 400){
+                criticalDays ++;
+            }
+        }
+        System.out.println(criticalDays);
 
         // Print results (uncomment when ready)
         // System.out.println("Average AQI: " + (sum / aqiData.length));
